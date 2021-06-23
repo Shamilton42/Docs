@@ -2,6 +2,14 @@
 Release Notes
 =======================================
 
+R6.4.XXXX (06/XX/2021)
+========================
+- **Bug fix** In AWS and Azure clouds, gateway and FireNet tag keys and values do not support the colon (:) and other special characters.
+- **Bug fix** Added support for Azure Controller Security Group Management allowing the Network Security Group and the Azure Controller to use different Resource Groups.
+- **Bug fix** Added support for Multiple Dynamic SAML Profile attributes for controller login in list format.
+- **Bug fix** Added size suggestions for deploying ActiveMesh Insane Mode gateway instances in Azure India regions.
+- **Bug fix** Transit list page displays exceptions during gateway deployment.
+
 R6.4.2672 (06/11/2021)
 ========================
 - **Bug fix** Gateway FQDN logs fail to download resulting in an error message.
@@ -162,7 +170,7 @@ R6.3.2364 (03/18/2021)
 - **Bug fix** Improve the route programming mechanism for Spoke VPC to filter the customize CIDRs first before installing into the Spoke VPC route table.
 - **Bug fix** Fix the Dashboard status display issue for BGP over LAN.
 - **Bug fix** Fix the Aviatrix Gateways "Polling" status after Controller Backup & Restore and IP migration
-- **Bug fix** Add the missing parameters in template for “Export to Terraform” feature
+- **Bug fix** Add the missing parameters in template for “Export to Terraform� feature
 - **Bug fix** Fix exception for CloudN registration after controller migration.
 
 R6.3.2247 (03/01/2021)
@@ -187,7 +195,7 @@ R6.3.2216 (2/22/2021)
 - **Bug fix** Unable to launch Palo Alto VM-Series in AWS GovCloud.
 - **Bug fix** Revert check introduced in 6.3.2092 for ActiveMesh 2.0 that blocks the Aviatrix Transit Peering if ASN# for Aviatrix Transit Gateways are same or not set.
 - **Bug fix** Fix the long security domain names display issue in Aviatrix Controller.
-- **Bug fix** Fix exception when using “Export to Terraform” feature for fqdn_tag_rule.
+- **Bug fix** Fix exception when using “Export to Terraform� feature for fqdn_tag_rule.
 - **Bug fix** Fix the route propagation for HPE Aviatrix Transit Gateway eth0 in Azure.
 - **Bug fix** Update RFC1918 routes in OCI VCN for non-default security list.
 - **Bug fix** Fix the default route entry removal issue when "Use VPC/VNET DNS Server" feature in-use.
@@ -1655,10 +1663,10 @@ R2.5
 -  New Aviatrix VPN client (v1.3.9) for user VPN (Mac, PC and Unix). To
    download, go to `this link. <http://docs.aviatrix.com/Downloads/samlclient.html>`__
 
--  Hardened password management for “forgot password”.
+-  Hardened password management for “forgot password�.
 
 -  Additional ciphers for site to cloud tunnels for interoperability. To
-   configure, go to Site2Cloud -> “Add New” -> Algorithms.
+   configure, go to Site2Cloud -> “Add New� -> Algorithms.
 
 2. Public cloud specific features
 ----------------------------------
@@ -1670,11 +1678,11 @@ R2.5
    Document <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Services+Gateway+Controller+API+reference.pdf>`__.
 
 -  Aviatrix cluster peering over AWS peering. To enable it, go to
-   Peering -> “Cluster Encrypted Peering” -> “New Peering” and select
-   “Over AWS Peering”.
+   Peering -> “Cluster Encrypted Peering� -> “New Peering� and select
+   “Over AWS Peering�.
 
 -  Aviatrix backup/restore in Google Cloud. To configure back/restore,
-   go to Settings -> “Backup & Restore”.
+   go to Settings -> “Backup & Restore�.
 
 -  Python script for Google Cloud Controller HA monitoring and
    restarting. `Follow <https://github.com/AviatrixSystems/Controller-HA-for-GCP>`__
@@ -1697,10 +1705,10 @@ R2.5
 -  Automated Aviatrix Controller deployment in AWS using `Cloudformation:
    <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__
 
--  GW Resizing API “edit\_gw\_config”.
+-  GW Resizing API “edit\_gw\_config�.
 
--  Support proxy setting modification through “Advanced Config” ->
-   “Proxy Settings”.
+-  Support proxy setting modification through “Advanced Config� ->
+   “Proxy Settings�.
 
 -  Frictionless install UX [Register Aviatrix on premises Gateway with
    UCC Controller at the time of install to auto-fetch initial
@@ -1712,7 +1720,7 @@ R2.5
 -  Support configurable health check frequency between Aviatrix
    Controller and Gateways for customers to meet their HA failover time
    constraint. To change the health check frequency, go to Settings ->
-   Keepalive. Select “slow” only when your network is unstable and
+   Keepalive. Select “slow� only when your network is unstable and
    gateways send too many status alerts.
 
 6. Logs and troubleshooting
@@ -1728,11 +1736,11 @@ R2.5
    link <https://github.com/AviatrixSystems/SumoLogicforAviatrix>`__.
 
 -  Rsyslog over UDP for customers needing UDP based rsyslog. To
-   configure, go to Settings -> Loggings -> “Remote Syslog” and select
-   UDP for “Protocol”
+   configure, go to Settings -> Loggings -> “Remote Syslog� and select
+   UDP for “Protocol�
 
 -  Configurable gateway debug level. To adjust the debug level, go to
-   Troubleshot -> Diagnostics -> “Gateway Debug Level” and select the
+   Troubleshot -> Diagnostics -> “Gateway Debug Level� and select the
    appropriate debug level for your gateway
 
 7. New Aviatrix OVF for VMWare
@@ -1778,7 +1786,7 @@ Monitor and Troubleshooting
 -  During UCC gateway launch, Controller now reports in text the
    progress of gateway creation in addition to the progress bar view.
 
--  “Dry Run” for system upgrade. Dry Run performs health checks for the
+-  “Dry Run� for system upgrade. Dry Run performs health checks for the
    Controller and gateways to detect potential upgrade failure without
    executing the command. Go to Settings -> Upgrade. Optionally, click
    Dry Run. If it is successful, you may click Upgrade.
@@ -2390,11 +2398,11 @@ UserConnect-040316
    cloud accounts.
 
 -  Allow to modify site2cloud connection and configuration template by
-   editing “Cloud Networks” or “Customer Networks” CIDRs. To use this
+   editing “Cloud Networks� or “Customer Networks� CIDRs. To use this
    feature, go to VPC/VNet -> Site2Cloud -> List -> Edit. If changes
    need to be made for subnets/address spaces in VPC/VNet, select “Cloud
-   Networks” to enter all VPC/VNet CIDRs. If changes need to be made for
-   subnets in on-prem network, select “Customer Networks” to enter all
+   Networks� to enter all VPC/VNet CIDRs. If changes need to be made for
+   subnets in on-prem network, select “Customer Networks� to enter all
    on-prem CIDRs. This feature minimizes the configuration changes on
    customer sites by not having to delete the existing site2cloud
    connection.
@@ -2432,7 +2440,7 @@ UserConnect-031016
 
 -  Support Site2Cloud null encryption. This feature allows you to create
    an IPSec tunnel without encrypting the packets. To configure, go to
-   VPC/VNet -> Site2Cloud -> Add and then select “Null Encryption”.
+   VPC/VNet -> Site2Cloud -> Add and then select “Null Encryption�.
 
 UserConnect-021516
 ==================
@@ -2472,14 +2480,14 @@ described below:
    changes, users have to delete the existing VPN gateways and re-create
    new ones. With this release, when you add a new VPC/VNet and your VPN
    users need to access them via VPN, you just modify the CIDRs at
-   “additional CIDRs” field at split tunnel configuration without
+   “additional CIDRs� field at split tunnel configuration without
    deleting any existing gateways. To configure, go to VPC/VNet -> Edit
    Configuration-> Modify Split Tunnel. Note all additional CIDRs (the
    CIDRs that are not the VPC/VNet CIDR where VPN gateways are deployed)
    must be entered all together, separated by comma. For example, you
    have two new VPCs, 10.10.0.0/16 and 10.11.0.0/16, and you like to
    access them via split tunnel VPN. You must enter at the Modify Split
-   Tunnel field “10.10.0.0/16,10.11.0.0/16” without the quote. In
+   Tunnel field “10.10.0.0/16,10.11.0.0/16� without the quote. In
    addition, you may need to add encrypted peering with the new VPCs in
    order for traffic to go through. The changes are effective
    immediately to the VPN gateway in the VPC/VNet. If there are multiple
@@ -2509,8 +2517,8 @@ described below:
 -  Support encryption for Azure ExpressRoute. This feature allows to run
    IPSec over Azure Express Route to ensure a higher security level. To
    enable it, first launch a gateway in a subnet dedicated for the
-   gateway, then go to VPC/VNet -> Site2Cloud, click “Add” tab and
-   select “Private Route Encryption”.
+   gateway, then go to VPC/VNet -> Site2Cloud, click “Add� tab and
+   select “Private Route Encryption�.
 
 -  Support VNet route diagnostics. Go to Settings -> Troubleshooting ->
    VNet Route Diagnostics to find various VNet routing related
@@ -2544,7 +2552,7 @@ UserConnect-121015
    Remote Syslog.
 
 -  Support the ability to push down to VPN user client the DHCP settings
-   made in AWS VPC Console “Create DHCP Options Set” menu. For example,
+   made in AWS VPC Console “Create DHCP Options Set� menu. For example,
    if you wish to change DNS name after the gateway has been launched,
    you can use this feature to make changes. The active VPN users will
    be disconnected when this feature is executed. To configure, go to
@@ -2625,7 +2633,7 @@ UserConnect-092115
 ==================
 
 -  Added hard token authentication support on DUO security. Made DUO
-   authentication configuration optional. When “Token” is configured as
+   authentication configuration optional. When “Token� is configured as
    the Push Mode for all gateways, user must append the 6 digits’ token
    number to their password.
 
