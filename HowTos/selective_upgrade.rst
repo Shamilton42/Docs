@@ -6,7 +6,15 @@
 Upgrading the Aviatrix Cloud Network Platform
 =============================================
 
+<<<<<<< Updated upstream
 If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. �
+=======
+<<<<<<< HEAD
+If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
+=======
+If you are upgrading from release 6.5.x or later, follow the guidelines and procedures in this section. If you are upgrading from release 6.4.x or earlier, follow the guidelines and procedures in `Inline Software Upgrade for 6.4 and Earlier Releases <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_. �
+>>>>>>> 5c758b1a23b53f412d5adb415ceb152d7c9f5a95
+>>>>>>> Stashed changes
 
 Aviatrix encourages you to keep your platform controller and gateways up to date to ensure you are operating the most secure and highest performing versions available. To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix provides a rolling selective upgrade process. You can choose to upgrade all Aviatrix gateways in all regions simultaneously or select specific gateways and regions to upgrade in logical groups conforming to your network update policies and maintenance windows. 
 
@@ -84,17 +92,25 @@ The following example demonstrates a selective upgrade from build 6.5.250 to 6.5
 #. The Aviatrix Platform Controller and all gateways are running 6.5.250.
 #. The Aviatrix Platform Controller is upgraded to 6.5.750.
 #. Some gateways are upgraded to 6.5.750, some gateways continue to run 6.5.250.
-
 |upgrade.mixed.versions|
-
 #. Operations are normal and no conflicts are detected.
 #. Gateways still running 6.5.250 are then upgraded to 6.5.750 and all gateways and the platform controller are running the same version.
+
 The following example demonstrates an attempted upgrade from 6.5.250 to 6.6.100.
+
 #. Aviatrix Platform Controller and all gateways are running 6.5.250.
 #. The Aviatrix Platform Controller is upgraded to 6.5.750.
 #. Some gateways are upgraded to 6.5.750, some gateways continue to run 6.5.250.
 #. You attempt to upgrade the Aviatrix Platform Controller from 6.5.750 to 6.6.100 without first upgrading the remaining 6.5.250 gateways to 6.5.750.  
+<<<<<<< Updated upstream
 #. The upgrade criteria are not satisfied, and the operation fails because all gateways connected to the platform controller are not upgraded to the same version as the platform controller. All gateways must be running the same version as the platform controller�before you can upgrade the platform controller.
+=======
+<<<<<<< HEAD
+#. The upgrade criteria are not satisfied, and the operation fails because all gateways connected to the platform controller are not upgraded to the same version as the platform controller. All gateways must be running the same version as the platform controller before you can upgrade the platform controller.
+=======
+#. The upgrade criteria are not satisfied, and the operation fails because all gateways connected to the platform controller are not upgraded to the same version as the platform controller. All gateways must be running the same version as the platform controller�before you can upgrade the platform controller.
+>>>>>>> 5c758b1a23b53f412d5adb415ceb152d7c9f5a95
+>>>>>>> Stashed changes
 
 |upgrade.mixed.versions.fail|
 
@@ -109,15 +125,33 @@ You can roll back gateway software upgrades to the previous version, you cannot 
 Upgrading OpenVPN Users
 -----------------------
 
+<<<<<<< Updated upstream
 Most upgrades do not impact connected OpenVPN� users. In some cases, OpenVPN service needs to be restarted as part of software upgrade. For example, upgrading to a new SSL version for security patch. In these cases, connected OpenVPN users are disconnected and need to reconnect after the upgrade. If a release requires stopping and restarting the service, the information is included in the release notes.
+=======
+<<<<<<< HEAD
+Most upgrades do not impact connected OpenVPN users. In some cases, OpenVPN service needs to be restarted as part of software upgrade. For example, upgrading to a new SSL version for security patch. In these cases, connected OpenVPN users are disconnected and need to reconnect after the upgrade. If a release requires stopping and restarting the service, the information is included in the release notes.
+=======
+Most upgrades do not impact connected OpenVPN� users. In some cases, OpenVPN service needs to be restarted as part of software upgrade. For example, upgrading to a new SSL version for security patch. In these cases, connected OpenVPN users are disconnected and need to reconnect after the upgrade. If a release requires stopping and restarting the service, the information is included in the release notes.
+>>>>>>> 5c758b1a23b53f412d5adb415ceb152d7c9f5a95
+>>>>>>> Stashed changes
 Rollbacks do disrupt services. If there is only one OpenVPN gateway in service, all user connections are lost and users cannot reconnect until the gateway is available. If there are other OpenVPN gateways available, the disconnected users can attempt to log in again and land on the available gateways.
 
 Upgrading HA Gateways in an Active Mesh Topology
 ------------------------------------------------
 
+<<<<<<< Updated upstream
 
 Gateway traffic is briefly affected and there is a drop in throughput when you perform a gateway image upgrade, and when a gateway software upgrade is rolled back. If Aviatrix ActiveMesh mode is enabled and only one gateway in an ActiveMesh pair is selected for upgrade, the system gracefully drains the traffic away from one of the gateways so it can be replaced. If both gateways in an ActiveMesh pair are selected, the gateways are replaced simultaneously without any additional�safeguards.
 
+=======
+<<<<<<< HEAD
+Gateway traffic is briefly affected and there is a drop in throughput when you perform a gateway image upgrade, and when a gateway software upgrade is rolled back. If Aviatrix ActiveMesh mode is enabled and only one gateway in an ActiveMesh pair is selected for upgrade, the system gracefully drains the traffic away from one of the gateways so it can be replaced. If both gateways in an ActiveMesh pair are selected, the gateways are replaced simultaneously without any additional safeguards.
+=======
+
+Gateway traffic is briefly affected and there is a drop in throughput when you perform a gateway image upgrade, and when a gateway software upgrade is rolled back. If Aviatrix ActiveMesh mode is enabled and only one gateway in an ActiveMesh pair is selected for upgrade, the system gracefully drains the traffic away from one of the gateways so it can be replaced. If both gateways in an ActiveMesh pair are selected, the gateways are replaced simultaneously without any additional�safeguards.
+
+>>>>>>> 5c758b1a23b53f412d5adb415ceb152d7c9f5a95
+>>>>>>> Stashed changes
 * If the gateway has BPG peers, the BGP process is shut down and the protocol reconverges to elect alternatives routes. 
 * The tunnel interfaces are shut down. The controller recalculates alternatives routes and distributes them to the gateways within the Aviatrix network. 
 * If the selected gateway is a spoke, the controller modifies the underlay cloud routing table of the selected gateway that was acting as the next hop for the default route or RFC1918 routes. The HA peer is selected as the next hop.
@@ -203,7 +237,15 @@ Upgrade Parameter Definitions
 
 - **Previous Version** Previous version of the controller. 
 - **Current Version** Current version of the controller. 
+<<<<<<< Updated upstream
 - **Kernel Version** Version of the controller�s Linux kernel. 
+=======
+<<<<<<< HEAD
+- **Kernel Version** Version of the controller's Linux kernel. 
+=======
+- **Kernel Version** Version of the controller�s Linux kernel. 
+>>>>>>> 5c758b1a23b53f412d5adb415ceb152d7c9f5a95
+>>>>>>> Stashed changes
 - **Release Versions** The upgrade path between the currently running version of the controller and the latest release available on the Aviatrix release server. For example, if you are running Aviatrix Platform 6.4.321 and the latest release available on the release server is 6.6.123 the Release Version field displays: UserConnect-6.6.123 (6.5,6.6). This indicates you must successively upgrade to 6.5 then upgrade to 6.6 to bring the platform up to the latest available version. 
 - **Target Release Version** New version of the Aviatrix Platform to which you are upgrading. If you do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller. The version cannot be a version earlier than the release currently running on the platform controller.  
 
@@ -305,6 +347,7 @@ Troubleshooting
 In rare cases where the controller and a group of gateways are selected for upgrade and a fatal bug is discovered in the new software, a situation where the controller and gateways are stuck running different versions could develop. If this condition occurs assistance from Aviatrix Support is required.
 For example:
 A controller and gateways are running version 6.5.200.
+
 * You upgrade the controller and a subset of gateways to 6.5.300.
 * You rollback the gateways to 6.5.200 because of a bug in the 6.5.300 software. 
 * Now the controller is running 6.5.300 and all gateways are running 6.5.200, and the gateways cannot be upgraded to 6.5.300 because of the bug.
